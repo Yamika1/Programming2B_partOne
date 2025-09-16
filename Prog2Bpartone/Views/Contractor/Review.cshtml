@@ -1,0 +1,105 @@
+﻿@{
+	ViewData["Title"] = "Contractor Review";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<nav class="mb-4">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="/">Home</a></li>
+		<li class="breadcrumb-item"><a href="/Contractor">Contractor List</a></li>
+		<li class="breadcrumb-item active">Contractor Review</li>
+	</ol>
+</nav>
+<div class="row">
+	<div class="col-lg-8">
+		<div class="card">
+			<div class="card-header d-flex justify-content-between">
+				<h4>Contractors part of the system</h4>
+				<span class="badge bg-warning">Pending Review</span>
+			</div>
+			<div class="card-body">
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>Contractor Id</</strong></div>
+					<div class="col-sm-9">86785756</div>
+				</div>
+
+
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>Contractor Name</</strong></div>
+					<div class="col-sm-9"><strong>Lola</strong></div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>Gender</strong></div>
+					<div class="col-sm-9"><strong>Female</strong></div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>Department</strong></div>
+					<div class="col-sm-9"><strong>IT</strong></div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>Bank</strong></div>
+					<div class="col-sm-9"><strong>ABSA</strong></div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>Account Number</strong></div>
+					<div class="col-sm-9"><strong>687467545</strong></div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>CVC</strong></div>
+					<div class="col-sm-9"><strong>687</strong></div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-sm-3"><strong>Branch code</strong></div>
+					<div class="col-sm-9"><strong>243332</strong></div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+
+</div>
+
+
+<div class="col-lg-4">
+	<div class="card">
+		<div class="card-header">
+			<h5>Supporting Documents</h5>
+		</div>
+		<div class="card-body">
+			<div class="list-group list-group-flush">
+				<div class="list-group-item d-flex justify-content-between align-items-center">
+				ID Copy
+					<a href="#" class="btn btn-sm btn-outline-primary">View</a>
+				</div>
+			
+			</div>
+
+
+
+			<!-- contractor review area -->
+
+			<div class="my-4">
+				<h5>contractor review</h5>
+				<div class="mb-3">
+					<label class="form-label">Comments on each contractor part of the existing system</label>
+					<textarea class="form-control" rows="4" placeholder="Enter your comments"></textarea>
+				</div>
+			</div>
+
+			<div class="d-grid gap-2">
+				<button type="button" class="btn btn-success">
+					Approve 
+				</button>
+				<button type="button" class="btn btn-danger">
+					Decline 
+				</button>
+				<a href="/Contractor" class="btn btn-secondary">Back to Dashboard</a>
+			</div>
+
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,108 @@
+﻿@{
+	ViewBag.Title = "Registration";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+	<h2> Registration</h2>
+	<a href="/Registration/Add" class="btn btn-primary"> + Add New Profile</a>
+
+</div>
+
+<div class="mb-3">
+	<a href="/Home/Index" class="btn btn-warning"> ← Back to Home</a>
+</div>
+
+<!--Contractor Table-->
+<div class="card">
+	<div class="card-body">
+		<table class="table">
+			<thead>
+				<tr>
+					<th> Id</th>
+					<th> Name</th>
+					<th>Gender</th>
+					<th>Department</th>
+					<th>Bank</th>
+					<th>Account Number</th>
+					<th>CVC</th>
+					<th>Branch code</th>
+				
+					<td>
+					</td>
+				</tr>
+
+			</thead>
+			<tbody>
+				<tr>
+					<td>2879789</td>
+					<td>Lola</td>
+					<td>Female</td>
+					<td>IT</td>
+					<td>ABSA</td>
+					<td>696564569</td>
+					<td>767</td>
+					<td>907877</td>
+					<td>
+						<a href="/Registration/Details/1" class="btn btn-sm btn-outline-secondary">
+							View
+						</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Nick</td>
+					<td>Male</td>
+					<td>HR</td>
+					<td>Nedbank</td>
+					<td>67854353</td>
+					<td>989</td>
+					<td>7721389</td>
+					<td>
+						<a href="/Registration/Details/2" class="btn btn-sm btn-outline-secondary">
+							View
+						</a>
+					
+					</td>
+				</tr>
+
+				<tr>
+					<td>4</td>
+					<td>Aza</td>
+					<td>Female</td>
+					<td>Finance</td>
+					<td>Standard Bank</td>
+					<td>56745468</td>
+					<td>678</td>
+					<td>9078095</td>
+					<td>
+						<a href="/Registration/Details/3" class="btn btn-sm btn-outline-secondary">
+							View
+						</a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Nick</td>
+					<td>Male</td>
+					<td>Marketing</td>
+					<td>Nedbank</td>
+					<td>7658654</td>
+					<td>342</td>
+					<td>24547889</td>
+					<td>
+						<a href="/Registration/Details/4" class="btn btn-sm btn-outline-secondary">
+							View
+						</a>
+					
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+	</div>
+</div>

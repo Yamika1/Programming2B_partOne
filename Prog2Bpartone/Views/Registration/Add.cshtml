@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Add Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-8 mc-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3>New Profile</h3>
+                <a href="/Registration" class="btn btn-outline-secondary btn-sm">← Back to Dashboard</a>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label"> ID</label>
+                        <input type="text" class="form-control" placeholder="Enter Contractor ID" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"> Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Name" />
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Account Number</label>
+                        <input type="text" class="form-control" name="AccountNumber" placeholder="Enter Account Number" />
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <select class="form-select" name="Gender">
+                            <option value="">-- Select Gender --</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                        </select>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Bank</label>
+                        <select class="form-select" name="Bank">
+                            <option value="">-- Select Bank --</option>
+                            <option>ABSA</option>
+                            <option>Nedbank</option>
+                            <option>Standard Bank</option>
+                            <option>FNB</option>
+                            <option>Capitec</option>
+                        </select>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <select class="form-select" name="Department">
+                            <option value="">-- Select Department --</option>
+                            <option>IT</option>
+                            <option>HR</option>
+                            <option>Marketing</option>
+                            <option>Finance</option>
+                            <option>Operations</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">CVC</label>
+                        <input type="text" class="form-control" name="CVC" placeholder="Enter CVC" />
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Branch Code</label>
+                        <input type="text" class="form-control" name="BranchCode" placeholder="Enter Branch Code" />
+                    </div>
+
+
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="/Registration" class="btn btn-secondary me-md-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Add Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@{
+	ViewBag.Title = "Make Payments";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+	<div class="col-lg-8 mc-auto">
+		<div class="card">
+			<div class="card-header">
+				<h3>New Payments</h3>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="mb-3">
+						<label class="form-label">Account Number</label>
+						<input type="text" class="form-control" placeholder="Enter Account Number" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Bank Name</label>
+						<input type="text" class="form-control" placeholder="Enter Bank Name" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Branch Code</label>
+						<input type="text" class="form-control" placeholder="Enter Branch Code" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Payment Method</label>
+						<select class="form-select">
+							<option>Select Payment Method</option>
+							<option>EFT</option>
+							<option>Card</option>
+							<option>Cash</option>
+
+						</select>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Payment Amount</label>
+						<input type="text" class="form-control" placeholder="Enter Payment Amount" />
+					</div>
+
+					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+						<a href="/MakePayments" class="btn btn-secondary me-md-2">Cancel</a>
+						<button type="submit" class="btn btn-primary">Make new Payment</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

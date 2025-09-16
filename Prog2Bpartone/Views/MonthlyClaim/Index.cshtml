@@ -1,0 +1,76 @@
+﻿@{
+	ViewBag.Title = "Monthly Claims";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="mb-3">
+	<a href="/Home/Index" class="btn btn-success"> ← Back to Home</a>
+</div>
+
+<!--Monthly Claim Table-->
+<div class="card">
+	<div class="card-body">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Prices of claims</th>
+					<th>Claim ID</th>
+					<th>Availability</th>
+					<th>Claim Month</th>
+                 
+                </tr>
+			</thead> 
+		
+			<tbody>
+				<tr>
+					<td>R10,000</td>
+					<td>CLM001</td>
+					<td>Available</td>
+					<td>August 2025</td>					
+				
+					<td>
+                        <a href="/MonthlyClaim/Review/1" class="btn btn-sm btn-outline-secondary">
+                            Review
+                        </a>
+						
+					</td>
+				</tr>
+				<tr>
+					<td>R7,000</td>
+					<td>CLM002</td>
+					<td>Available</td>
+					<td>August 2025</td>
+				
+					<td>
+
+					
+					</td>
+				</tr>
+				<tr>
+					<td>R9,500</td>
+					<td>CLM003</td>
+					<td>Not Available</td>
+					<td>June 2025</td>
+				
+					<td>
+
+						
+					</td>
+				</tr>
+				<tr>
+					<td>R11,500</td>
+					<td>CLM003</td>
+					<td>Available</td>
+					<td>September 2025</td>
+					
+					<td>
+					
+					
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

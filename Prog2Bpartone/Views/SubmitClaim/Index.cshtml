@@ -1,0 +1,118 @@
+﻿@{
+	ViewBag.Title = "Submit Claim";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+	<h2> My Claims </h2>
+	<a href="/SubmitClaim/Add" class="btn btn-primary"> + Add new Claim</a>
+
+</div>
+
+<div class="mb-3">
+	<a href="/Home/Index" class="btn btn-dark"> ← Back to Home</a>
+</div>
+
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+		<a class="nav-link active" href="#">All Claims</a>
+
+
+	</li>
+	<li class="nav-item">
+		<a class="nav-link active" href="#">Pending (1)</a>
+
+	</li>
+	<li class="nav-item">
+		<a class="nav-link active" href="#">Approved (2)</a>
+
+	</li>
+	<li class="nav-item">
+		<a class="nav-link active" href="#">Declined (1)</a>
+
+</ul>
+
+
+<div class="card">
+	<div class="card-body">
+		<table class="table">
+			<thread>
+				<tr>
+					<th>Claim ID</th>
+					<th>Claimant Name</th>
+					<th>Policy Number</th>
+					<th>Claim Date</th>
+					<th>Contractor ID</th>
+					<th>Amount Claimed</th>
+				</tr>
+			</thread>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>John Smith</td>
+					<td>P-123456</td>
+					<td>2022-01-01</td>
+					<td>5765456</td>
+					<td>$10,000</td>
+					<td><span class="badge bg-warning">Pending</span></td>
+					<td>
+					
+						<a href="/Contractor/Details/1" class="btn btn-sm btn-outline-primary me-1">
+							View Details
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Sarah Johnson</td>
+					<td>P-1654321</td>
+					<td>2022-02-15</td>
+					<td>5674345</td>
+					<td>$5,000</td>
+					<td><span class="badge bg-danger">Declined</span></td>
+					<td>
+					
+						<a href="/Contractor/Details/2" class="btn btn-sm btn-outline-primary me-1">
+							View Details
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>David Brown</td>
+					<td>P-987654</td>
+					<td>2022-03-10
+					<td>
+					<td>12456978</td>
+					<td>$8,000</td>
+					<td><span class="badge bg-success">Approved</span></td>
+					<td>
+				
+						<a href="/Contractor/Details/3" class="btn btn-sm btn-outline-primary me-1">
+							View Details
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Emily White</td>
+					<td>P-9890123</td>
+					<td>2022-04-20
+					<td>
+					<td>89756745</td>
+					<td>$7,500</td>
+					<td><span class="badge bg-success">Approved</span></td>
+					<td>
+					
+						<a href="/Contractor/Details/4" class="btn btn-sm btn-outline-primary me-1">
+							View Details
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

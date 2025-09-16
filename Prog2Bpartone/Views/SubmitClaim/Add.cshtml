@@ -1,0 +1,51 @@
+﻿@{
+	ViewBag.Title = "Add Book";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="row">
+	<div class="col-lg-8 mc-auto">
+		<div class="card">
+			<div class="card-header">
+				<h3>New Claim</h3>
+				<a href="/Contractor" class="btn btn-outline-secondary btn-sm">← Back to Dashboard</a>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="mb-3">
+						<label class="form-label">Claim ID</label>
+						<input type="text" class="form-control" placeholder="Enter Claim ID" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Claimant Name</label>
+						<input type="text" class="form-control" placeholder="Enter Name" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Policy Number</label>
+						<input type="text" class="form-control" placeholder="Enter Policy Number" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Claim Date</label>
+						<input type="text" class="form-control" placeholder="Enter Claim Date" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Contractor ID</label>
+						<input type="text" class="form-control" placeholder="Enter Contractor ID" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Amount Claimed</label>
+						<input type="text" class="form-control" placeholder="Enter Amount Claimed" />
+					</div>
+
+				
+
+					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+						<a href="/SubmitClaim" class="btn btn-secondary me-md-2">Cancel</a>
+						<button type="submit" class="btn btn-primary">Add Claim</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
