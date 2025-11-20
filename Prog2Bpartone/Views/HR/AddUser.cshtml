@@ -1,0 +1,48 @@
+﻿@model Prog2Bpartone.Models.HR
+@{
+    ViewBag.Title = "Add User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card">
+            <div class="card-header"><h3>New User</h3></div>
+            <div class="card-body">
+                <form asp-action="AddUser" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+
+                    <div class="mb-3">
+                        <label asp-for="FullName" class="form-label">Full Name</label>
+                        <input asp-for="FullName" class="form-control" placeholder="Enter Full Name" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="hourlyRate" class="form-label">Hourly Rate</label>
+                        <input asp-for="hourlyRate" class="form-control" placeholder="Enter hourly rate" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ContactNumber" class="form-label">Contact Number</label>
+                        <input asp-for="ContactNumber" class="form-control" placeholder="Enter Contact Number" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Supporting Documents</label>
+                        <input type="file" name="documents" multiple class="form-control" />
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="/HR" class="btn btn-secondary me-md-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

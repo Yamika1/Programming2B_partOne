@@ -1,0 +1,52 @@
+﻿@model Prog2Bpartone.Models.HR
+@{
+	ViewBag.Title = "User Details";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["Error"] != null)
+{
+	<div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="card mb-3">
+	<div class="card-body">
+		<p><strong>Full Name:</strong> @Model.FullName</p>
+		<p><strong>Email:</strong> @Model.Email</p>
+		<p><strong>Hourly Rate:</strong> @Model.hourlyRate</p>
+		<p><strong>Contact Number:</strong> @Model.ContactNumber</p>
+	</div>
+</div>
+
+<div class="card">
+	<div class="card-header">
+		<h5>Supporting Documents (@Model?.Documents?.Count ?? 0)</h5>
+	</div>
+	<div class="card-body">
+		@if (Model?.Documents == null || !Model.Documents.Any())
+		{
+			<p class="text-muted">No documents uploaded.</p>
+		}
+		else
+		{
+			<div class="list-group">
+				@foreach (var doc in Model.Documents)
+				{
+					<div class="list-group-item d-flex flex-column">
+						<strong>@doc.FileName</strong>
+						<span class="badge bg-success"> Encrypted</span>
+						<small>@(doc.FileSize / 1024) KB</small>
+
+						<a asp-controller="HR"
+						   asp-action="DownloadDocument"
+						   asp-route-claimId="@Model.Id"
+						   asp-route-docId="@doc.Id"
+						   class="btn btn-sm btn-primary mt-2">
+							Download & Decrypt
+						</a>
+					</div>
+				}
+			</div>
+		}
+	</div>
+</div>

@@ -18,5 +18,10 @@ html {
 }
 
 body {
-    background-color: darkred;
+    background-color: mediumpurple;
+    background-image: url("/images/Screenshot 2025-09-13 202117.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

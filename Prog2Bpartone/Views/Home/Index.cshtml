@@ -1,7 +1,7 @@
-﻿﻿@{
-ViewData["Title"] = "Home Page";
-Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
+
 <style>
     body {
         background-image: url("/images/Screenshot 2025-09-15 115943.png");
@@ -20,24 +20,22 @@ Layout = "~/Views/Shared/_Layout.cshtml";
         <h4 class="mb-4">   Contract Monthly Claim System</h4>
         <ul class="nav flex-column">
             <li class="nav-item mb-2">
-                <a asp-controller="Registration" asp-action="Index" class="btn btn-success w-100">Registration</a>
+                <a asp-controller="AcademicManagers" asp-action="Index" class="btn btn-success w-100">AcademicManagers</a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a asp-controller="Lecturer" asp-action="Index" class="btn btn-info w-100">Lecturer</a>
             </li>
             <li class="nav-item mb-2">
-                <a asp-controller="Contractor" asp-action="Index" class="btn btn-danger w-100">Contractor</a>
+                <a asp-controller="LecturerViewClaim" asp-action="Index" class="btn btn-primary w-100">LecturerViewClaim</a>
             </li>
             <li class="nav-item mb-2">
-                <a asp-controller="SubmitClaim" asp-action="Index" class="btn btn-info w-100">SubmitClaim</a>
+                <a asp-controller="ProgrammeCoordinators" asp-action="Index" class="btn btn-warning w-100">ProgrammeCoordinators</a>
             </li>
             <li class="nav-item mb-2">
-                <a asp-controller="Payment" asp-action="Index" class="btn btn-warning w-100">Payment</a>
+                <a asp-controller="HR" asp-action="Index" class="btn btn-danger w-100">HR</a>
             </li>
-           
-            <li class="nav-item mb-2">
-                <a asp-controller="MonthlyClaim" asp-action="Index" class="btn btn-primary w-100">MonthlyClaim</a>
-            </li>
-            <li class="nav-item mb-2">
-                <a asp-controller="MakePayments" asp-action="Index" class="btn btn-dark w-100">MakePayments</a>
-            </li>
+
         </ul>
     </div>
 

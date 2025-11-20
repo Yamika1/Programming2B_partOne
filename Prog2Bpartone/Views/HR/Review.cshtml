@@ -1,0 +1,53 @@
+﻿@model Prog2Bpartone.Models.HR
+@{
+    ViewBag.Title = "Review User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Full Name:</strong> @Model.FullName</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p>
+            <strong>Status:</strong>
+            @if (Model.Status == UserStatus.Approved)
+            {
+                <span class="badge bg-success">Approved</span>
+            }
+            else if (Model.Status == UserStatus.Declined)
+            {
+                <span class="badge bg-danger">Declined</span>
+            }
+            else
+            {
+                <span class="badge bg-warning">Pending</span>
+            }
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="Approve" method="post" class="mb-3">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="btn btn-success">Approve</button>
+        </form>
+
+        <form asp-action="Decline" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.Id" />
+            <div class="mb-3">
+                <label>Reason for Declining</label>
+                <textarea name="comments" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Decline</button>
+            <a href="/HR" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

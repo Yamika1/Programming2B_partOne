@@ -1,0 +1,87 @@
+﻿@model Prog2Bpartone.Models.Claims
+@{
+    ViewBag.Title = "SUBMIT CLAIM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-8 mc-auto">
+        <div class="card">
+            <div class="card-header"><h3>New Claim</h3></div>
+
+            <div class="card-body">
+                <form asp-action="AddClaim" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="ClaimName" class="form-label"></label>
+                        <input asp-for="ClaimName" class="form-control" />
+                        <span asp-validation-for="ClaimName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="HoursWorked" class="form-label"></label>
+                        <input asp-for="HoursWorked" class="form-control" />
+                        <span asp-validation-for="HoursWorked" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="HourlyRate" class="form-label"></label>
+                        <input asp-for="HourlyRate" class="form-control" />
+                        <span asp-validation-for="HourlyRate" class="text-danger"></span>
+                    </div>
+
+                    <!-- display TotalAmount -->
+                    <div class="mb-3">
+                        <label>Total Amount</label>
+                        <input class="form-control" value="@Model?.TotalAmount" readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ClaimMonth" class="form-label"></label>
+                        <select asp-for="ClaimMonth" class="form-select">
+                            <option value="">Select Claim Month</option>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <span asp-validation-for="ClaimMonth" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ClaimType" class="form-label"></label>
+                        <input asp-for="ClaimType" class="form-control" />
+                        <span asp-validation-for="ClaimType" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="SubmittedDate" class="form-label"></label>
+                        <input asp-for="SubmittedDate" class="form-control" />
+                        <span asp-validation-for="SubmittedDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Supporting Documents</label>
+                        <input type="file" name="documents" multiple class="form-control" />
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="/Lecturer" class="btn btn-secondary me-md-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Add Claim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model List<Prog2Bpartone.Models.HR>
+@{
+    ViewData["Title"] = "Users Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Users</h2>
+    <a href="/HR/AddUser" class="btn btn-primary">+ Add New User</a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="card">
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <p class="text-muted">No users added yet.</p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Hourly Rate</th>
+                        <th>Contact Number</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.FullName</td>
+                            <td>@user.Email</td>
+                            <td>@user.hourlyRate</td>
+                            <td>@user.ContactNumber</td>
+                            <td>@user.Status</td>
+                            <td>
+                                <a href="/HR/Details/@user.Id" class="btn btn-sm btn-outline-primary">Details</a>
+                                <a href="/HR/Review/@user.Id" class="btn btn-sm btn-outline-warning">Review</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+

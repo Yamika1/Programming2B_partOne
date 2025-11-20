@@ -1,0 +1,116 @@
+﻿@model Prog2Bpartone.Models.Claims
+
+@{
+    ViewBag.Title = "Claim Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="mb-4">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Lecturer">Claims</a></li>
+        <li class="breadcrumb-item active">Claim Details</li>
+    </ol>
+</nav>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+
+                @if (Model.Status == Prog2Bpartone.Models.ClaimStatus.Pending)
+                {
+                    <span class="badge bg-warning">Pending Review</span>
+                }
+                else if (Model.Status == Prog2Bpartone.Models.ClaimStatus.Approved)
+                {
+                    <span class="badge bg-success">Approved</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">Declined</span>
+                }
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row mb-3">
+                    <div class="col-sm-3"><strong>Claim Name</strong></div>
+                    <div class="col-sm-9">@Model.ClaimName</div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-3"><strong>Hours Worked</strong></div>
+                    <div class="col-sm-9">@Model.HoursWorked</div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-3"><strong>Hourly Rate</strong></div>
+                    <div class="col-sm-9">@Model.HourlyRate</div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-3"><strong>Total Amount</strong></div>
+                    <div class="col-sm-9">@Model.TotalAmount.ToString("C")</div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-3"><strong>Claim Month</strong></div>
+                    <div class="col-sm-9">@Model.ClaimMonth</div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-3"><strong>Claim Type</strong></div>
+                    <div class="col-sm-9">@Model.ClaimType</div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-3"><strong>Submitted Date</strong></div>
+                    <div class="col-sm-9">@Model.SubmittedDate</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card mt-4">
+    <div class="card-header">
+        <h5>Supporting Documents (@Model?.Documents?.Count ?? 0)</h5>
+    </div>
+
+    <div class="card-body">
+        @if (Model.Documents == null || !Model.Documents.Any())
+        {
+            <p class="text-muted">No documents uploaded.</p>
+        }
+        else
+        {
+            <div class="list-group">
+                @foreach (var doc in Model.Documents)
+                {
+                    <div class="list-group-item d-flex flex-column">
+                        <strong>@doc.FileName</strong>
+                        <span class="badge bg-success mb-1">Encrypted</span>
+                        <small>@(doc.FileSize / 1024) KB</small>
+
+                        <a asp-controller="Lecturer"
+                           asp-action="DownloadDocument"
+                           asp-route-claimId="@Model.ClaimId"
+                           asp-route-docId="@doc.Id"
+                           class="btn btn-sm btn-primary mt-2">
+                            Download & Decrypt
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>

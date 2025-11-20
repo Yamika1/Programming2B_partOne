@@ -25,6 +25,35 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="ProgrammeCoordinators" asp-action="Index">
+
+                                </a>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("Lecturer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Lecturer" asp-action="Index"></a>
+                            </li>
+                        }
+                        @if (User.IsInRole("manager"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="AcademicManagersController" asp-action="Index"> </a>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("super user"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="UserManagementController" asp-action="Index"> </a>
+                            </li>
+                        }
+                        <partial name="_LoginPartial" />
                     </ul>
                 </div>
             </div>
